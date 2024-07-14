@@ -1,24 +1,6 @@
 const mongoose = require("mongoose");
 const otpGenerator = require("otp-generator");
-
-const from = VONAGE_BRAND_NAME;
-const to = TO_NUMBER;
-const text = "A text message sent using the Vonage SMS API";
-
-async function sendSMS() {
-  await vonage.sms
-    .send({ to, from, text })
-    .then((resp) => {
-      console.log("Message sent successfully");
-      console.log(resp);
-    })
-    .catch((err) => {
-      console.log("There was an error sending the messages.");
-      console.error(err);
-    });
-}
-
-sendSMS();
+const sendSms = require("../services/send_SMS");
 
 // userLogin
 exports.registerUser = async (req, res) => {
@@ -67,18 +49,9 @@ exports.registerUser = async (req, res) => {
     specialChars: false,
   });
 
-  // sending OTP using to contact Number
-  try {
-    await twilio.messages.create({
-      body: `Here is your registration otp.
-        OTP : ${otp}
-        Please don't share this with anyone.`,
-      to: userContactNumber,
-      from: "+15076901952",
-    });
-  } catch (err) {
-    console.log(err);
-  }
+  console.log(otp);
+
+  sendSms(userContactNumber, otp);
 
   userExist[0].userOtp = otp;
   await userExist[0].save();
