@@ -13,3 +13,23 @@
   display: flex;
   flex-direction: column;
 }
+
+::placeholder {
+  @apply text-lg;
+}
+
+::-webkit-input-placeholder {
+  @apply text-sm;
+}
+
+::-moz-placeholder {
+  @apply text-xs;
+}
+
+:-ms-input-placeholder {
+  @apply text-xs;
+}
+
+:-moz-placeholder {
+  @apply text-xs;
+}

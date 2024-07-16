@@ -7,7 +7,7 @@ export function Header() {
             Summer Sale For All Swim Suits And Free Express Delivery - OFF 50%!
             &nbsp; &nbsp;
           </span>
-          <span className="hidden underline cursor-pointer sm:flex">
+          <span className="hidden underline cursor-pointer md:flex">
             Shop Now
           </span>
         </div>
@@ -15,7 +15,7 @@ export function Header() {
           lang="en"
           name="lang"
           id="lang"
-          className="hidden rounded-md font-semibold focus:outline-none p-1 lg:px-2 text-black md:flex"
+          className="hidden rounded-md font-semibold focus:outline-none p-1 lg:px-2 text-black lg:flex"
         >
           <option value="Eng">English</option>
           <option value="Nep">नेपाली</option>
