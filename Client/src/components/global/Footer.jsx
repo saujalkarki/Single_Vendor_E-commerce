@@ -38,8 +38,8 @@ export function Footer() {
             p2Data={"Login / Register"}
             p3Data={"Cart"}
           >
-            <p>Wishlist</p>
-            <p>Shop</p>
+            <p className="cursor-pointer">Wishlist</p>
+            <p className="cursor-pointer">Shop</p>
           </FooterLink>
 
           <FooterLink
@@ -48,7 +48,7 @@ export function Footer() {
             p2Data={"Terms Of Use"}
             p3Data={"FAQ"}
           >
-            <p>Contact</p>
+            <p className="cursor-pointer">Contact</p>
           </FooterLink>
 
           <FooterLink
@@ -56,13 +56,25 @@ export function Footer() {
             p1Data={"Save $3 with App. New User Only."}
           >
             <div className=" grid grid-cols-2">
-              <img src={qrImg} alt="qr code" className=" w-[4.8rem]" />
+              <img
+                src={qrImg}
+                alt="qr code"
+                className=" w-[4.8rem] cursor-pointer"
+              />
               <div className="flex flex-col gap-1">
-                <img src={googlePlay} alt="play store" className=" w-28" />
-                <img src={appStore} alt="app store" className=" w-28" />
+                <img
+                  src={googlePlay}
+                  alt="play store"
+                  className=" w-28 cursor-pointer"
+                />
+                <img
+                  src={appStore}
+                  alt="app store"
+                  className=" w-28 cursor-pointer"
+                />
               </div>
             </div>
-            <div className="flex">
+            <div className="flex cursor-pointer">
               <CiFacebook />
               <CiTwitter />
               <CiInstagram />
