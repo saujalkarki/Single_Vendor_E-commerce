@@ -5,6 +5,7 @@ const productModel = new Schema({
   productName: {
     type: String,
     required: true,
+    unique: true,
   },
   productDescription: {
     type: String,
@@ -39,6 +40,6 @@ const productModel = new Schema({
   },
 });
 
-const Product = mongoose.model("Product", productModel);
+const product = mongoose.model("Product", productModel);
 
-module.exports = Product;
+module.exports = product;
