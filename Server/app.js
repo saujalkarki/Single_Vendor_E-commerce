@@ -3,6 +3,7 @@ const app = express();
 
 require("dotenv").config();
 
+//parsing json data and url encoded payloads
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 
