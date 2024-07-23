@@ -9,7 +9,7 @@ export function Footer() {
   return (
     <>
       <div className=" bg-black text-white mt-auto">
-        <div className=" grid sm:grid-cols-2 lg:grid-cols-5 px-14 py-14">
+        <div className=" grid sm:grid-cols-2 lg:grid-cols-5 px-8 md:px-14 py-14 gap-4">
           <FooterLink
             h1Data={"Exclusive"}
             p1Data={"Subscribe"}
@@ -19,7 +19,9 @@ export function Footer() {
               <input
                 type="text"
                 placeholder="Enter your Email."
-                className=" bg-black border-2 rounded-sm py-1 pl-1 text-sm w-[100%]"
+                name="footerEmail"
+                id="footerEmail"
+                className=" bg-black border-2 rounded-sm px-3 py-2 text-lg md:pr-6 md:py-1 md:text-base w-[100%]"
               />
               <VscSend className=" absolute right-2" />
             </div>
@@ -55,7 +57,7 @@ export function Footer() {
             h1Data={"Download App"}
             p1Data={"Save $3 with App. New User Only."}
           >
-            <div className=" grid grid-cols-2">
+            <div className=" flex gap-3">
               <img
                 src={qrImg}
                 alt="qr code"
@@ -74,15 +76,15 @@ export function Footer() {
                 />
               </div>
             </div>
-            <div className="flex cursor-pointer">
-              <CiFacebook />
-              <CiTwitter />
-              <CiInstagram />
-              <CiLinkedin />
+            <div className="flex gap-2 cursor-pointer mt-3">
+              <CiFacebook className=" w-8 h-8" />
+              <CiTwitter className=" w-8 h-8" />
+              <CiInstagram className=" w-8 h-8" />
+              <CiLinkedin className=" w-8 h-8" />
             </div>
           </FooterLink>
         </div>
-        <div className=" text-center pt-6">
+        <div className=" text-center pt-6 pb-6">
           &copy; Copyright Saujal 2024. All rights reserved.
         </div>
       </div>

@@ -18,7 +18,9 @@ export function NavBar() {
           <input
             type="text"
             placeholder="what are you looking for?"
-            className=" bg-gray-200 border-4 rounded-sm p-1"
+            name="searchInput"
+            id="searchInput"
+            className=" placeholder-sm bg-gray-200 border-4 rounded-sm p-1"
           />
           <FiSearch className=" absolute right-1" />
         </div>

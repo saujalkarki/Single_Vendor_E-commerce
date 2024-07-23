@@ -18,8 +18,12 @@
   @apply text-lg;
 }
 
-::-webkit-input-placeholder {
+.placeholder-sm::-webkit-input-placeholder {
   @apply text-sm;
+}
+
+.placeholder-lg::-webkit-input-placeholder {
+  @apply text-lg;
 }
 
 ::-moz-placeholder {
