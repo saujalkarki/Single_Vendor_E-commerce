@@ -1,6 +1,15 @@
 const express = require("express");
 const app = express();
+const cors = require("cors");
 
+// allowing cross origin resouce sharing CORS
+app.use(
+  cors({
+    origin: ["http://localhost:5173", "http://127.0.0.1:5173"],
+  })
+);
+
+// configuring for .env variables
 require("dotenv").config();
 
 //parsing json data and url encoded payloads
@@ -15,7 +24,7 @@ const mongoURI = process.env.MONGO_URI;
 const dbConfig = require("./src/database/db_config");
 dbConfig(mongoURI);
 
-// requiring user  route
+// requiring user route
 const userRoute = require("./src/route/user_route");
 app.use("/user", userRoute);
 

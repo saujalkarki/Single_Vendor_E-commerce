@@ -1,7 +1,12 @@
 const router = require("express").Router();
+const multer = require("multer");
 
-const { registerUser } = require("../controller/user_controller");
+const storage = require("../services/multer_config");
+const upload = multer({ storage: storage });
 
-router.route("/register").post(registerUser);
+const { userSignUpOtp, userSignUp } = require("../controller/user_controller");
+
+router.route("/signup/otp").post(userSignUpOtp);
+router.route("/signup").post(upload.single("userProfilePhoto"), userSignUp);
 
 module.exports = router;

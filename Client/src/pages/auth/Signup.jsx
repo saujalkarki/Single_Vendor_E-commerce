@@ -1,5 +1,10 @@
-import { Header, NavBar, AuthForm, Footer } from "../components/index";
-import { AuthInput } from "../components/index";
+import {
+  Header,
+  NavBar,
+  AuthForm,
+  AuthInput,
+  Footer,
+} from "../../components/index";
 
 export function Signup() {
   return (

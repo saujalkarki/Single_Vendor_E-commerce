@@ -17,8 +17,6 @@ async function sendSms(to, otp) {
       Otp: ${otp}
       This will be expiring in 5 minutes from now.`,
     });
-
-    console.log("OTP send successfully.");
   } catch (err) {
     console.log(err);
   }
