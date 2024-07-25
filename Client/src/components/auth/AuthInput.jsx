@@ -14,6 +14,7 @@ export function AuthInput({ type, placeHolder, name }) {
             name={name}
             id={name}
             autoComplete="current-password"
+            required
             className=" placeholder-lg border-b-2 border-black pt-5 pl-1 text-lg focus:outline-none w-[100%]"
           />
           <div
@@ -32,6 +33,7 @@ export function AuthInput({ type, placeHolder, name }) {
           name={name}
           id={name}
           autoComplete={type === "email" ? "username" : type}
+          required
           className=" placeholder-lg border-b-2 border-black pt-5 pl-1 text-lg focus:outline-none"
         />
       )}

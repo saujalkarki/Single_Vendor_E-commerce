@@ -11,7 +11,12 @@ export function Login() {
     <>
       <Header />
       <NavBar />
-      <AuthForm auth="Login" h1Data="Login to Exclusive" buttonData="Login">
+      <AuthForm
+        auth="Login"
+        h1Data="Login to Exclusive"
+        buttonData="Login"
+        linkData="Forgot Password?"
+      >
         <AuthInput
           type="text"
           placeHolder="Email or Phone Number"

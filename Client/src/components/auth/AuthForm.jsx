@@ -1,25 +1,14 @@
-import { useNavigate } from "react-router-dom";
-
 import authImg from "../../assets/img/authImg.png";
 import googleIcon from "../../assets/img/googleIcon.png";
 
-export function AuthForm({ children, auth, h1Data, buttonData }) {
-  const navigate = useNavigate();
-  let formData;
-
-  function submitForm(e) {
-    e.preventDefault();
-
-    formData = new FormData(e.currentTarget);
-    const formDataObj = {};
-
-    formData.forEach((value, key) => {
-      formDataObj[key] = value;
-    });
-
-    navigate("/signup/otp", { state: { formDataObj: formDataObj } });
-  }
-
+export function AuthForm({
+  children,
+  auth,
+  h1Data,
+  buttonData,
+  linkData,
+  submitForm,
+}) {
   return (
     <>
       <div className=" flex flex-row justify-center md:gap-20 md:justify-normal py-10 ">
@@ -56,7 +45,7 @@ export function AuthForm({ children, auth, h1Data, buttonData }) {
             </div>
           ) : (
             <p className="text-center text-red-500 cursor-pointer">
-              Forgot Password?
+              {linkData}
             </p>
           )}
         </div>

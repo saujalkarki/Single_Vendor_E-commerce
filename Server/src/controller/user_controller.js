@@ -60,20 +60,20 @@ exports.userSignUp = async (req, res) => {
 
   console.log(userProfilePhoto);
 
-  if (
-    !userFirstName ||
-    !userLastName ||
-    !userEmail ||
-    !userPassword ||
-    !userContactNumber ||
-    !userOtp ||
-    !userProfilePhoto
-  ) {
-    return res.status(400).json({
-      ...errorMessage,
-      message: "Please Enter all the data.",
-    });
-  }
+  // if (
+  //   !userFirstName ||
+  //   !userLastName ||
+  //   !userEmail ||
+  //   !userPassword ||
+  //   !userContactNumber ||
+  //   !userOtp ||
+  //   !userProfilePhoto
+  // ) {
+  //   return res.status(400).json({
+  //     ...errorMessage,
+  //     message: "Please Enter all the data.",
+  //   });
+  // }
 
   const userExist = await User.find({
     userEmail,
@@ -101,7 +101,7 @@ exports.userSignUp = async (req, res) => {
     userEmail,
     userPassword,
     userContactNumber,
-    userProfilePhoto: `${userFirstName}--${userProfilePhoto.fieldname}--${userProfilePhoto.originalname}`,
+    userProfilePhoto: `${Date.now()}--}`,
   });
 
   res.status(200).json({
