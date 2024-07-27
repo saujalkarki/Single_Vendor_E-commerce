@@ -8,3 +8,4 @@ export * from "./About/AboutMainSection";
 export * from "./About/SectionOne";
 export * from "./About/SectionTwo";
 export * from "./About/SectionThree";
+export * from "./ContactMini";
