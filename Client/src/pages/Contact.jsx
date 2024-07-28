@@ -1,10 +1,10 @@
-import { Header, NavBar, Footer } from "../components/index";
+import { Header, NavBar, Footer, ContactMini } from "../components/index";
 
 export function Contact() {
   <>
     <Header />
     <NavBar />
-    <Contact />
+    <ContactMini />
     <Footer />
   </>;
 }

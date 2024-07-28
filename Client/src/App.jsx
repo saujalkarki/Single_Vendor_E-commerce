@@ -7,6 +7,7 @@ import {
   ErrorFOF,
   About,
   Contact,
+  Account,
 } from "./pages/index";
 
 function App() {
@@ -16,7 +17,8 @@ function App() {
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about" element={<About />} />
-          <Route path="/about" element={<Contact />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/account" element={<Account />} />
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup/otp" element={<SignupOtp />} />
