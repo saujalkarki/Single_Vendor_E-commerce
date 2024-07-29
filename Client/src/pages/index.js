@@ -6,3 +6,4 @@ export * from "./error/ErrorFOF";
 export * from "./About";
 export * from "./Contact";
 export * from "./Account";
+export * from "./ProductDetailPage";
