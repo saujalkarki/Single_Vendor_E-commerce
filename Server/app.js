@@ -28,12 +28,11 @@ const mongoURI = process.env.MONGO_URI;
 const dbConfig = require("./src/database/db_config");
 dbConfig(mongoURI);
 
-// requiring user route
+// requiring  routes
 const userRoute = require("./src/route/user_route");
-app.use("/user", userRoute);
-
-// requiring product route
 const productRoute = require("./src/route/product_route");
+
+app.use("/user", userRoute);
 app.use("/product", productRoute);
 
 app.listen(port, () => {

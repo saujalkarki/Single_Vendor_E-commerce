@@ -1,5 +1,7 @@
 const mongoose = require("mongoose");
 const User = require("../model/user_model");
+const bcrypt = require("bcryptjs");
+const jwt = require("jsonwebtoken");
 
 const otpGenerator = require("otp-generator");
 const sendSms = require("../services/send_SMS");
@@ -45,7 +47,7 @@ exports.userSignUpOtp = async (req, res) => {
   });
 };
 
-// userLogin
+// user Signup
 exports.userSignUp = async (req, res) => {
   const {
     userFirstName,
@@ -108,5 +110,54 @@ exports.userSignUp = async (req, res) => {
     status: "Success",
     message: `User named as ${userFirstName} Created Successfully.`,
     data: newUser,
+  });
+};
+
+// userLogin
+exports.userLogin = async (req, res) => {
+  const { userEmail, userPassword } = req.body;
+
+  if (!userEmail || !userPassword) {
+    return res.status(400).json({
+      ...errorMessage,
+      message: "please provide all the data.",
+    });
+  }
+
+  const userExist = await User.findOne({ userEmail });
+
+  if (!userExist) {
+    return res.status(400).json({
+      ...errorMessage,
+      message: "user with this Email doesn't exist.",
+    });
+  }
+
+  const passwordMatched = bcrypt.compareSync(
+    userPassword,
+    userExist.userPassword
+  );
+
+  if (!passwordMatched) {
+    return res.status(400).json({
+      ...errorMessage,
+      message: "user Email or password doesn't matched.",
+    });
+  }
+
+  const jwtToken = jwt.sign(
+    {
+      id: userExist._id,
+    },
+    JSON_SECRET_KEY,
+    {
+      expiresIn: "10m",
+    }
+  );
+
+  res.status(200).json({
+    ...successMessage,
+    message: "Logged in successfully.",
+    data: jwtToken,
   });
 };
