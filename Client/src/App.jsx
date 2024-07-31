@@ -9,6 +9,7 @@ import {
   Contact,
   Account,
   ProductDetailPage,
+  ForgotPassword,
 } from "./pages/index";
 
 function App() {
@@ -24,6 +25,7 @@ function App() {
           <Route path="/signup" element={<Signup />} />
           <Route path="/login" element={<Login />} />
           <Route path="/signup/otp" element={<SignupOtp />} />
+          <Route path="/forgot" element={<ForgotPassword />} />
           <Route path="/error/404" element={<ErrorFOF />} />
         </Routes>
       </BrowserRouter>

@@ -7,7 +7,6 @@ import {
   Footer,
 } from "../../components/index";
 import axios from "axios";
-import { CiBasketball } from "react-icons/ci";
 
 export function SignupOtp() {
   let signUpOtpFormData;

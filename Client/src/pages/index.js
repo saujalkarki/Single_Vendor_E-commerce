@@ -2,6 +2,7 @@ export * from "./Home";
 export * from "./auth/Signup";
 export * from "./auth/SignupOtp";
 export * from "./auth/Login";
+export * from "./auth/ForgotPassword";
 export * from "./error/ErrorFOF";
 export * from "./About";
 export * from "./Contact";
