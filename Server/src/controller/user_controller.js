@@ -161,3 +161,6 @@ exports.userLogin = async (req, res) => {
     data: jwtToken,
   });
 };
+
+// forgot password
+exports.forgotPassword = async (res, res) => {};
