@@ -29,10 +29,10 @@ const dbConfig = require("./src/database/db_config");
 dbConfig(mongoURI);
 
 // requiring  routes
-const userRoute = require("./src/route/user_route");
+const authRoute = require("./src/route/auth_route");
 const productRoute = require("./src/route/product_route");
 
-app.use("/user", userRoute);
+app.use("/user", authRoute);
 app.use("/product", productRoute);
 
 app.listen(port, () => {
