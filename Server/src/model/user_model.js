@@ -28,7 +28,7 @@ const userModel = new Schema(
       required: true,
     },
     userOtp: {
-      type: Number,
+      type: String,
     },
     isOTPVerified: {
       type: Boolean,
